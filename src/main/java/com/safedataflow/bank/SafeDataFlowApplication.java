@@ -1,0 +1,12 @@
+package com.safedataflow.bank;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SafeDataFlowApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SafeDataFlowApplication.class, args);
+    }
+}
