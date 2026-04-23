@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import AdsterraBanner from "@/components/adsterra-banner";
 
 const imgIcon = "/figma/icon-logo.svg";
 const imgVector = "/figma/doc-vector.svg";
@@ -294,6 +295,15 @@ export default function Home() {
               </li>
             </ul>
           </nav>
+
+          <a
+            href="https://stackpilots.org"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#d0d5dd] bg-white px-4 py-2 text-[15px] font-semibold text-[#101828] transition hover:border-[#98a2b3] hover:bg-[#f8fafc]"
+          >
+            StackPilots
+          </a>
         </div>
       </header>
 
@@ -308,22 +318,11 @@ export default function Home() {
             data-name="Container"
             data-node-id="1:19"
           >
-            <div className="h-[40px] w-[194.117px]" data-name="Container" data-node-id="1:20">
-              <div className="flex flex-col gap-[4px] items-center">
-                <p
-                  className="font-medium leading-[20px] text-[14px] tracking-[-0.1504px] text-[#64748b]"
-                  data-node-id="1:22"
-                >
-                  Advertisement - Leaderboard
-                </p>
-                <p
-                  className="font-normal leading-[16px] text-[12px] text-[#99a1af]"
-                  data-node-id="1:24"
-                >
-                  728x90
-                </p>
-              </div>
-            </div>
+            <AdsterraBanner
+              adKey="415655a8488f1c4e7aff18d4dd0b100f"
+              width={728}
+              height={90}
+            />
           </div>
         </div>
 
@@ -631,26 +630,15 @@ export default function Home() {
 
               <div className="h-auto" data-name="Container" data-node-id="1:89">
                 <div
-                  className="bg-[#f9fafb] border-2 border-[#d1d5dc] rounded-[10px] h-[220px] sm:h-[320px] lg:h-[420px] xl:h-[600px] w-full xl:w-[300px] flex items-center justify-center"
+                  className="bg-[#f9fafb] border-2 border-[#d1d5dc] rounded-[10px] h-[220px] sm:h-[320px] lg:h-[420px] xl:h-[600px] w-full xl:w-[160px] flex items-center justify-center"
                   data-name="Container"
                   data-node-id="1:90"
                 >
-                  <div className="h-[40px] w-[110.141px]" data-name="Container" data-node-id="1:91">
-                    <div className="flex flex-col gap-[4px] items-center">
-                      <p
-                        className="font-medium leading-[20px] text-[14px] tracking-[-0.1504px] text-[#64748b]"
-                        data-node-id="1:93"
-                      >
-                        Sponsored Tools
-                      </p>
-                      <p
-                        className="font-normal leading-[16px] text-[12px] text-[#99a1af]"
-                        data-node-id="1:95"
-                      >
-                        300x600
-                      </p>
-                    </div>
-                  </div>
+                  <AdsterraBanner
+                    adKey="1a5394a229dc82855d8a008ea6c4fdeb"
+                    width={160}
+                    height={600}
+                  />
                 </div>
               </div>
             </div>

@@ -45,6 +45,15 @@ export default function SiteHeader({ currentPath }: SiteHeaderProps) {
             })}
           </ul>
         </nav>
+
+        <a
+          href="https://stackpilots.org"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full border border-[#d0d5dd] bg-white px-4 py-2 text-sm font-semibold text-[#101828] transition hover:border-[#98a2b3] hover:bg-[#f8fafc]"
+        >
+          StackPilots
+        </a>
       </div>
     </header>
   );
