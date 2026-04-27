@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
 type AdsterraBannerProps = {
   adKey: string;
   width: number;
@@ -9,38 +5,23 @@ type AdsterraBannerProps = {
 };
 
 export default function AdsterraBanner({ adKey, width, height }: AdsterraBannerProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const srcDoc = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=${width},initial-scale=1" /><style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style></head><body><script>atOptions={key:'${adKey}',format:'iframe',height:${height},width:${width},params:{}};</script><script src="https://www.highperformanceformat.com/${adKey}/invoke.js"></script></body></html>`;
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) {
-      return;
-    }
-
-    container.innerHTML = "";
-
-    const optionsScript = document.createElement("script");
-    optionsScript.type = "text/javascript";
-    optionsScript.text = `window.atOptions = {
-      key: '${adKey}',
-      format: 'iframe',
-      height: ${height},
-      width: ${width},
-      params: {}
-    };`;
-
-    const invokeScript = document.createElement("script");
-    invokeScript.type = "text/javascript";
-    invokeScript.src = `https://www.highperformanceformat.com/${adKey}/invoke.js`;
-    invokeScript.async = true;
-
-    container.appendChild(optionsScript);
-    container.appendChild(invokeScript);
-
-    return () => {
-      container.innerHTML = "";
-    };
-  }, [adKey, height, width]);
-
-  return <div ref={containerRef} style={{ width, height, overflow: "hidden" }} />;
+  return (
+    <iframe
+      title="Advertisement"
+      scrolling="no"
+      srcDoc={srcDoc}
+      width={width}
+      height={height}
+      style={{
+        width,
+        height,
+        border: 0,
+        overflow: "hidden",
+        background: "transparent",
+        display: "block",
+      }}
+    />
+  );
 }
