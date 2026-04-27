@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 type AdsterraBannerProps = {
   adKey: string;
   width: number;
@@ -8,20 +6,19 @@ type AdsterraBannerProps = {
 
 export default function AdsterraBanner({ adKey, width, height }: AdsterraBannerProps) {
   return (
-    <>
-      <Script id={`adsterra-${adKey}-config`} strategy="afterInteractive">
-        {`window.atOptions = {
+    <div style={{ width, height, overflow: "hidden" }}>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `atOptions = {
   key: '${adKey}',
   format: 'iframe',
   height: ${height},
   width: ${width},
   params: {}
-};`}
-      </Script>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.highperformanceformat.com/${adKey}/invoke.js`}
+};`,
+        }}
       />
-    </>
+      <script src={`https://www.highperformanceformat.com/${adKey}/invoke.js`} />
+    </div>
   );
 }
